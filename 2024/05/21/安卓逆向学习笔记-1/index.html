@@ -334,10 +334,554 @@
 		
 		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
 			<a><i class="kirafont icon-calendar-fill"></i>2024年05月21日</a>
-			<a><i class="kirafont icon-edit-fill"></i>0 字</a>
-			<a><i class="kirafont icon-time-circle-fill"></i>大概 1 分钟</a>
+			<a><i class="kirafont icon-edit-fill"></i>1.9k 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 8 分钟</a>
 		</div>
-		
+		<h2><span id="linux-kernel">Linux Kernel</span></h2><h2><span id="smali">smali</span></h2><h4><span id="关键字">关键字</span></h4><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>.class</td>
+<td>类名</td>
+</tr>
+<tr>
+<td>.super</td>
+<td>父类名</td>
+</tr>
+<tr>
+<td>.source</td>
+<td>源名</td>
+</tr>
+<tr>
+<td>.field</td>
+<td>变量</td>
+</tr>
+<tr>
+<td>.method</td>
+<td>方法名</td>
+</tr>
+<tr>
+<td>.register</td>
+<td>寄存器</td>
+</tr>
+<tr>
+<td>.end method</td>
+<td>方法名的结束</td>
+</tr>
+<tr>
+<td>public</td>
+<td>公有</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>保护</td>
+</tr>
+<tr>
+<td>private</td>
+<td>私有</td>
+</tr>
+<tr>
+<td>.parameter</td>
+<td>方法参数</td>
+</tr>
+<tr>
+<td>.prologue</td>
+<td>方法开始</td>
+</tr>
+<tr>
+<td>.line xxx</td>
+<td>位于第xxx行</td>
+</tr>
+</tbody></table>
+<h4><span id="数据类型">数据类型</span></h4><table>
+<thead>
+<tr>
+<th>smali类型</th>
+<th>java类型</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>V</td>
+<td>void</td>
+<td>声明，无返回值</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>boolean</td>
+<td>布尔值，返回0&#x2F;1</td>
+</tr>
+<tr>
+<td>B</td>
+<td>byte</td>
+<td>字节，返回字节</td>
+</tr>
+<tr>
+<td>S</td>
+<td>short</td>
+<td>短整数，返回数字</td>
+</tr>
+<tr>
+<td>C</td>
+<td>char</td>
+<td>字符，返回字符</td>
+</tr>
+<tr>
+<td>I</td>
+<td>int</td>
+<td>整数，返回数字</td>
+</tr>
+<tr>
+<td>J</td>
+<td>long</td>
+<td>长整数，返回数字</td>
+</tr>
+<tr>
+<td>F</td>
+<td>float</td>
+<td>单浮点，返回数字</td>
+</tr>
+<tr>
+<td>D</td>
+<td>double</td>
+<td>双浮点，返回数字</td>
+</tr>
+<tr>
+<td>string</td>
+<td>String</td>
+<td>文本，返回字符串</td>
+</tr>
+<tr>
+<td>Lxxx&#x2F;xxx&#x2F;xxx</td>
+<td>object</td>
+<td>对象，返回对象</td>
+</tr>
+</tbody></table>
+<h4><span id="常见指令">常见指令</span></h4><table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>const</td>
+<td>重写整数属性，真假属性内容，只能是数字类型</td>
+</tr>
+<tr>
+<td>const-string</td>
+<td>重写字符串</td>
+</tr>
+<tr>
+<td>const-wide</td>
+<td>重写长整数</td>
+</tr>
+<tr>
+<td>return</td>
+<td>返回</td>
+</tr>
+<tr>
+<td>if-eq</td>
+<td>如果equal(a &#x3D; b)，则跳转</td>
+</tr>
+<tr>
+<td>if-ne</td>
+<td>如果not equal(a !&#x3D; b)，则跳转</td>
+</tr>
+<tr>
+<td>if-eqz</td>
+<td>如果equal zero，则跳转</td>
+</tr>
+<tr>
+<td>if-nez</td>
+<td>如果not equal zero，则跳转</td>
+</tr>
+<tr>
+<td>if-ge</td>
+<td>如果greater equal(a &gt;&#x3D; b)，则跳转</td>
+</tr>
+<tr>
+<td>if-le</td>
+<td>如果little equal(a &lt;&#x3D; b)，则跳转</td>
+</tr>
+<tr>
+<td>goto</td>
+<td>强制跳转</td>
+</tr>
+<tr>
+<td>switch</td>
+<td>分支跳转</td>
+</tr>
+<tr>
+<td>iget</td>
+<td>获取寄存器数据ui</td>
+</tr>
+</tbody></table>
+<h2><span id="frida">Frida</span></h2><p>常用注入指令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">frida -U -f 进程名 -l hook.js<br></code></pre></td></tr></table></figure>
+
+
+
+<h2><span id="so文件分析">so文件分析</span></h2><h2><span id="arm汇编">arm汇编</span></h2><h2><span id="elf文件">ELF文件</span></h2><h3><span id="elf文件格式">ELF文件格式</span></h3><p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240521143833953.png" alt="image-20240521143833953" class="lazyload"></p>
+<h2><span id="安卓逆向这档事学习记录">安卓逆向这档事学习记录</span></h2><h3><span id="2-初识apk">2 初识APK</span></h3><h4><span id="1apk结构">1.APK结构</span></h4><table>
+<thead>
+<tr>
+<th>注释</th>
+<th align="left">文件</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>assets</td>
+<td align="left">存放APK的静态资源文件，视频音频图片等</td>
+</tr>
+<tr>
+<td>lib</td>
+<td align="left">armeabi-v7a基本通用所有android设备，arm64-v8a只适用于64位的android设备，x86常见用于android模拟器，其目录下的.so文件是c或c++编译的动态链接库文件</td>
+</tr>
+<tr>
+<td>META-INF</td>
+<td align="left">保存应用的签名信息，用于验证APK的完整性（验证文件是否被修改</td>
+</tr>
+<tr>
+<td>res</td>
+<td align="left">存放资源文件，图片字符串等</td>
+</tr>
+<tr>
+<td>AndroidMainfest.xml</td>
+<td align="left">APK的应用清单信息，描述了应用的名字，版本，权限，引用的库文件等信息</td>
+</tr>
+<tr>
+<td>classes.dex</td>
+<td align="left">java源码编译后的java字节码文件，APK运行的主要逻辑</td>
+</tr>
+<tr>
+<td>resources.arsc</td>
+<td align="left">编译后的二进制资源文件，映射资源和id，通过R文件中的id就可以找到对应资源</td>
+</tr>
+</tbody></table>
+<h4><span id="2双开原理">2.双开原理</span></h4><table>
+<thead>
+<tr>
+<th>原理</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>修改包名</td>
+<td>让系统认为这是两个APP，从而生成两个数据储存路径，成为两个互不干扰的APP</td>
+</tr>
+<tr>
+<td>修改Framework</td>
+<td>有系统修改权限时可修改Framework</td>
+</tr>
+<tr>
+<td>通过虚拟化技术实现</td>
+<td>虚拟Framework层、虚拟文件系统、模拟Android对组件的管理、虚拟应用进程管理 等一整套虚拟技术，将APK复制一份到虚拟空间中运行，例如：平行空间</td>
+</tr>
+<tr>
+<td>以插件机制运行</td>
+<td>利用反射替换，动态代理，hook了系统的大部分与system—server进程通讯的函数，以此作为“欺上瞒下”的目的，欺骗系统“以为”只有一个apk在运行，瞒过插件让其“认为”自己已经安装</td>
+</tr>
+</tbody></table>
+<h4><span id="3汉化apk">3.汉化APK</span></h4><p>汉化：使用专门的工具对外文版的软件资源进行读取、翻译、修改、回写等一系列处理，使软件的菜单、对话框、提示等用户界面显示为中文，而程序的内核和功能保持不变，这个过程即为软件汉化</p>
+<h5><span id="汉化流程">汉化流程</span></h5><p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20231016020156555-17140304616102.png" alt="image-20231016020156555" class="lazyload"></p>
+<h4><span id="4androidmainfestxml">4.AndroidMainfest.xml</span></h4><p>AndroidManifest.xml文件是整个应用程序的信息描述文件，定义了应用程序中包含的Activity,Service,Content provider和BroadcastReceiver组件信息。每个应用程序在根目录下必须包含一个AndroidManifest.xml文件，且文件名不能修改。它描述了package中暴露的组件，他们各自的实现类，各种能被处理的数据和启动位置。</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>定义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>versionCode</td>
+<td>版本号，用于更新</td>
+</tr>
+<tr>
+<td>versionName</td>
+<td>版本名，用于给用户了解版本</td>
+</tr>
+<tr>
+<td>package</td>
+<td>包名</td>
+</tr>
+<tr>
+<td>uses-permission android:name&#x3D;””</td>
+<td>应用权限</td>
+</tr>
+<tr>
+<td>android:label&#x3D;”@string&#x2F;app_name”</td>
+<td>应用名称</td>
+</tr>
+<tr>
+<td>android:icon&#x3D;”@mipmap&#x2F;ic_launcher”</td>
+<td>应用图标路径</td>
+</tr>
+<tr>
+<td>android:debuggable&#x3D;”true”</td>
+<td>应用是否开启debug权限</td>
+</tr>
+</tbody></table>
+<h3><span id="3-初始smali">3 初始smali</span></h3><h4><span id="关键字">关键字</span></h4><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>.class</td>
+<td>类名</td>
+</tr>
+<tr>
+<td>.super</td>
+<td>父类名</td>
+</tr>
+<tr>
+<td>.source</td>
+<td>源名</td>
+</tr>
+<tr>
+<td>.field</td>
+<td>变量</td>
+</tr>
+<tr>
+<td>.method</td>
+<td>方法名</td>
+</tr>
+<tr>
+<td>.register</td>
+<td>寄存器</td>
+</tr>
+<tr>
+<td>.end method</td>
+<td>方法名的结束</td>
+</tr>
+<tr>
+<td>public</td>
+<td>公有</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>保护</td>
+</tr>
+<tr>
+<td>private</td>
+<td>私有</td>
+</tr>
+<tr>
+<td>.parameter</td>
+<td>方法参数</td>
+</tr>
+<tr>
+<td>.prologue</td>
+<td>方法开始</td>
+</tr>
+<tr>
+<td>.line xxx</td>
+<td>位于第xxx行</td>
+</tr>
+</tbody></table>
+<h4><span id="数据类型">数据类型</span></h4><table>
+<thead>
+<tr>
+<th>smali类型</th>
+<th>java类型</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>V</td>
+<td>void</td>
+<td>声明，无返回值</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>boolean</td>
+<td>布尔值，返回0&#x2F;1</td>
+</tr>
+<tr>
+<td>B</td>
+<td>byte</td>
+<td>字节，返回字节</td>
+</tr>
+<tr>
+<td>S</td>
+<td>short</td>
+<td>短整数，返回数字</td>
+</tr>
+<tr>
+<td>C</td>
+<td>char</td>
+<td>字符，返回字符</td>
+</tr>
+<tr>
+<td>I</td>
+<td>int</td>
+<td>整数，返回数字</td>
+</tr>
+<tr>
+<td>J</td>
+<td>long</td>
+<td>长整数，返回数字</td>
+</tr>
+<tr>
+<td>F</td>
+<td>float</td>
+<td>单浮点，返回数字</td>
+</tr>
+<tr>
+<td>D</td>
+<td>double</td>
+<td>双浮点，返回数字</td>
+</tr>
+<tr>
+<td>string</td>
+<td>String</td>
+<td>文本，返回字符串</td>
+</tr>
+<tr>
+<td>Lxxx&#x2F;xxx&#x2F;xxx</td>
+<td>object</td>
+<td>对象，返回对象</td>
+</tr>
+</tbody></table>
+<h4><span id="常见指令">常见指令</span></h4><table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>const</td>
+<td>重写整数属性，真假属性内容，只能是数字类型</td>
+</tr>
+<tr>
+<td>const-string</td>
+<td>重写字符串</td>
+</tr>
+<tr>
+<td>const-wide</td>
+<td>重写长整数</td>
+</tr>
+<tr>
+<td>return</td>
+<td>返回</td>
+</tr>
+<tr>
+<td>if-eq</td>
+<td>如果equal(a &#x3D; b)，则跳转</td>
+</tr>
+<tr>
+<td>if-ne</td>
+<td>如果not equal(a !&#x3D; b)，则跳转</td>
+</tr>
+<tr>
+<td>if-eqz</td>
+<td>如果equal zero，则跳转</td>
+</tr>
+<tr>
+<td>if-nez</td>
+<td>如果not equal zero，则跳转</td>
+</tr>
+<tr>
+<td>if-ge</td>
+<td>如果greater equal(a &gt;&#x3D; b)，则跳转</td>
+</tr>
+<tr>
+<td>if-le</td>
+<td>如果little equal(a &lt;&#x3D; b)，则跳转</td>
+</tr>
+<tr>
+<td>goto</td>
+<td>强制跳转</td>
+</tr>
+<tr>
+<td>switch</td>
+<td>分支跳转</td>
+</tr>
+<tr>
+<td>iget</td>
+<td>获取寄存器数据</td>
+</tr>
+</tbody></table>
+<h3><span id="4-安卓组件activity">4 安卓组件Activity</span></h3><h4><span id="安卓四大组件">安卓四大组件</span></h4><table>
+<thead>
+<tr>
+<th>组件</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Activity</td>
+<td>在应用中的一个Activity可以用来表示一个界面，意思可以理解为“活动”，即一个活动开始，代表 Activity组件启动，活动结束，代表一个Activity的生命周期结束。一个Android应用必须通过Activity来运行和启动，Activity的生命周期交给系统统一管理</td>
+</tr>
+<tr>
+<td>Service</td>
+<td>Service可以在后台执行长时间运行操作而没有用户界面的应用组件，不依赖任何用户界面，例如后台播放音乐，后台下载文件等</td>
+</tr>
+<tr>
+<td>Broadcast Receiver</td>
+<td>一个用于接收广播信息，并做出对应处理的组件。比如我们常见的系统广播：通知时区改变、电量低、用户改变了语言选项等</td>
+</tr>
+<tr>
+<td>Content Provider</td>
+<td>作为应用程序之间唯一的共享数据的途径，Content Provider主要的功能就是存储并检索数据以及向其他应用程序提供访问数据的接口。Android内置的许多数据都是使用Content Provider形式，供开发者调用的（如视频，音频，图片，通讯录等）</td>
+</tr>
+</tbody></table>
+<h3><span id="5-elf文件格式">5 ELF文件格式</span></h3><p>ELF（Executable and Linkable Format）是一种可执行和可链接的文件格式，是linux底下二进制文件，可以理解为windows下的<code>PE文件</code>，在Android中可以比作<code>dll</code>，方便函数的移植，在常用于保护Android软件，增加逆向难度。</p>
+<p>ELF文件的主要组成部分包括：</p>
+<ul>
+<li>ELF Header：文件头，描述文件的基本信息</li>
+<li>Program Header Table：程序头表，描述进程映像的布局</li>
+<li>Section Header Table：节区头表，描述文件的各个节区</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>节区名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>.text</td>
+<td>代码段，存放程序的指令</td>
+</tr>
+<tr>
+<td>.data</td>
+<td>数据段，存放已初始化的全局变量和静态变量</td>
+</tr>
+<tr>
+<td>.rodata</td>
+<td>只读数据段，存放只读数据</td>
+</tr>
+<tr>
+<td>.bss</td>
+<td>未初始化数据段，存放未初始化的全局变量和静态变量</td>
+</tr>
+<tr>
+<td>.symtab</td>
+<td>符号表，存放符号信息</td>
+</tr>
+<tr>
+<td>.strtab</td>
+<td>字符串表，存放字符串数据</td>
+</tr>
+<tr>
+<td>.dynsym</td>
+<td>动态符号表，存放动态链接需要的符号信息</td>
+</tr>
+<tr>
+<td>.dynamic</td>
+<td>动态链接信息，存放动态链接器需要的信息</td>
+</tr>
+</tbody></table>
+
 	</article>
 
 	 
