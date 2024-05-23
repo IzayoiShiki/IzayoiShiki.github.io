@@ -345,7 +345,7 @@
 			<a><i class="kirafont icon-time-circle-fill"></i>大概 5 分钟</a>
 		</div>
 		<h1><span id="elf文件格式">ELF文件格式</span></h1><p>摘抄自<code>CTF Wiki</code></p>
-<p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240521143833953-171638750196313-171648011656821-17164802846812.png" alt="image-20240521143833953" class="lazyload"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240521143833953-171638750196313-171648011656821-17164802846812-17164812871271.png" alt="image-20240521143833953" class="lazyload"></p>
 <p><code>ELF Header</code>:给出整个文件的组织情况</p>
 <p><code>Program Header Table</code>:向系统描述如何创建进程，重定位文件不需要，但是用于生成进程的目标文件必须具有</p>
 <p><code>Section</code>:包含了链接视图中要使用的大部分信息:如指令&#x2F;数据&#x2F;符号表&#x2F;重定位信息等</p>
@@ -353,18 +353,18 @@
 <h2><span id="elf-header">ELF Header</span></h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">define</span> EI_NIDENT   16</span><br><br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> &#123;<br>    <span class="hljs-type">unsigned</span> <span class="hljs-type">char</span>   e_ident[EI_NIDENT];<br>    ELF32_Half      e_type;<br>    ELF32_Half      e_machine;<br>    ELF32_Word      e_version;<br>    ELF32_Addr      e_entry;<br>    ELF32_Off       e_phoff;<br>    ELF32_Off       e_shoff;<br>    ELF32_Word      e_flags;<br>    ELF32_Half      e_ehsize;<br>    ELF32_Half      e_phentsize;<br>    ELF32_Half      e_phnum;<br>    ELF32_Half      e_shentsize;<br>    ELF32_Half      e_shnum;<br>    ELF32_Half      e_shstrndx;<br>&#125; Elf32_Ehdr;<br></code></pre></td></tr></table></figure>
 
 <h3><span id="e_ident">e_ident</span></h3><p>占八个字节，每个字节作用如下</p>
-<p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240521222723276-171638749872512-171648011448320-17164802825991.png" alt="image-20240521222723276" class="lazyload"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240521222723276-171638749872512-171648011448320-17164802825991-17164812898442.png" alt="image-20240521222723276" class="lazyload"></p>
 <h4><span id="ei_mag">EI_MAG</span></h4><p>magic头，表示是ELF文件</p>
-<p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240522000610981-171638749733611-171648011313519-17164802871033.png" alt="image-20240522000610981" class="lazyload"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240522000610981-171638749733611-171648011313519-17164802871033-17164812913983.png" alt="image-20240522000610981" class="lazyload"></p>
 <h4><span id="ei_class">EI_CLASS</span></h4><p>标识文件的类型</p>
-<p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240522000723847-171638749603910-171648011198018-17164802883694.png" alt="image-20240522000723847" class="lazyload"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240522000723847-171638749603910-171648011198018-17164802883694-17164812924654.png" alt="image-20240522000723847" class="lazyload"></p>
 <h4><span id="ei_data">EI_DATA</span></h4><p>表示文件的编码类型</p>
-<p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240522000809244-17163874952549-171648011118217-17164802895395.png" alt="image-20240522000809244" class="lazyload"></p>
-<h3><span id="e_type">e_type</span></h3><p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240522004114244-17163874940078-171648010928116-17164802910336.png" alt="image-20240522004114244" class="lazyload"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240522000809244-17163874952549-171648011118217-17164802895395-17164812938715.png" alt="image-20240522000809244" class="lazyload"></p>
+<h3><span id="e_type">e_type</span></h3><p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240522004114244-17163874940078-171648010928116-17164802910336-17164812951236.png" alt="image-20240522004114244" class="lazyload"></p>
 <h3><span id="e_machine">e_machine</span></h3><p>指定了当前文件可以运行的机器架构</p>
-<p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240522012513320-17163874922537-171648010756015-17164802924257.png" alt="image-20240522012513320" class="lazyload"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240522012513320-17163874922537-171648010756015-17164802924257-17164812969317.png" alt="image-20240522012513320" class="lazyload"></p>
 <h3><span id="e_version">e_version</span></h3><p>标识目标文件的版本</p>
-<p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240522013025463-17163874913416-171648010661414-17164802943318.png" alt="image-20240522013025463" class="lazyload"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240522013025463-17163874913416-171648010661414-17164802943318-17164812986208.png" alt="image-20240522013025463" class="lazyload"></p>
 <h3><span id="e_entry">e_entry</span></h3><p>这一项为系统转交控制权给 ELF 中相应代码的虚拟地址。如果没有相关的入口项，则这一项为 0</p>
 <h3><span id="e_phoff">e_phoff</span></h3><p>这一项给出<strong>程序头部表</strong>在文件中的字节偏移（<strong>Program Header table OFFset</strong>）。如果文件中没有程序头部表，则为 0</p>
 <h3><span id="e_shoff">e_shoff</span></h3><p>这一项给出<strong>节头表</strong>在文件中的字节偏移（ <strong>Section Header table OFFset</strong> ）。如果文件中没有节头表，则为 0</p>
@@ -378,15 +378,15 @@
 <h2><span id="program-header-table">Program Header Table</span></h2><p>Program Header Table 是一个结构体数组，每一个元素的类型是 <code>Elf32_Phdr</code>，描述了一个段或者其它系统在准备程序执行时所需要的信息。其中，ELF 头中的 <code>e_phentsize</code> 和 <code>e_phnum</code> 指定了该数组每个元素的大小以及元素个数。一个目标文件的段包含一个或者多个节。</p>
 <h3><span id="elf32_phdr">Elf32_Phdr</span></h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> &#123;<br>    ELF32_Word  p_type;<br>    ELF32_Off   p_offset;<br>    ELF32_Addr  p_vaddr;<br>    ELF32_Addr  p_paddr;<br>    ELF32_Word  p_filesz;<br>    ELF32_Word  p_memsz;<br>    ELF32_Word  p_flags;<br>    ELF32_Word  p_align;<br>&#125; Elf32_Phdr;<br></code></pre></td></tr></table></figure>
 
-<p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240522203308466-17163874884515-171648010279613-17164802968439.png" alt="image-20240522203308466" class="lazyload"></p>
-<h3><span id="段的类型">段的类型</span></h3><p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240522204044876-17163874868664-171648010099612-171648029819310.png" alt="image-20240522204044876" class="lazyload"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240522203308466-17163874884515-171648010279613-17164802968439-17164813018299.png" alt="image-20240522203308466" class="lazyload"></p>
+<h3><span id="段的类型">段的类型</span></h3><p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240522204044876-17163874868664-171648010099612-171648029819310-171648130336910.png" alt="image-20240522204044876" class="lazyload"></p>
 <h3><span id="p_flags">p_flags</span></h3><p>当系统为可加载的段创建内存镜像时，它会按照 p_flags 将段设置为对应的权限</p>
-<p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240522220450287-17163874849863-171648009958411-171648030028411.png" alt="image-20240522220450287" class="lazyload"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240522220450287-17163874849863-171648009958411-171648030028411-171648130513211.png" alt="image-20240522220450287" class="lazyload"></p>
 <p>其中，所有在 PF_MASKPROC 中的比特位都是被保留用于与处理器相关的语义信息</p>
-<p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240522221137140-17163874838362-171648009817010-171648030247212.png" alt="image-20240522221137140" class="lazyload"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240522221137140-17163874838362-171648009817010-171648030247212-171648130624412.png" alt="image-20240522221137140" class="lazyload"></p>
 <h3><span id="段的内容">段的内容</span></h3><p>一个段可能包括一到多个节区，但是这并不会影响程序的加载。尽管如此，我们也必须需要各种各样的数据来使得程序可以执行以及动态链接等等。下面会给出一般情况下的段的内容。对于不同的段来说，它的节的顺序以及所包含的节的个数有所不同。此外，与处理相关的约束可能会改变对应的段的结构。</p>
-<p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240523002338828-17164800943439-171648030500314.png" alt="image-20240523002338828" class="lazyload"></p>
-<p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240523002343766-17164800933658-171648030411413.png" alt="image-20240523002343766" class="lazyload"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240523002338828-17164800943439-171648030500314-171648130784013.png" alt="image-20240523002338828" class="lazyload"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240523002343766-17164800933658-171648030411413-171648130893214.png" alt="image-20240523002343766" class="lazyload"></p>
 <p>程序头部的 PT_DYNAMIC 类型的元素指向 .dynamic 节。其中，got 表和 plt 表包含与地址无关的代码相关信息。尽管在这里给出的例子中，plt 节出现在代码段，但是对于不同的处理器来说，可能会有所变动。</p>
 <p>.bss 节的类型为 SHT_NOBITS，这表明它在 ELF 文件中不占用空间，但是它却占用可执行文件的内存镜像的空间。通常情况下，没有被初始化的数据在段的尾部，因此，<code>p_memsz</code> 才会比 <code>p_filesz</code> 大</p>
 <h2><span id="section-header-table">Section Header Table</span></h2><p>在ELF文件尾部，用于定位ELF文件中的每个Section的具体位置</p>
@@ -394,17 +394,17 @@
 <p>Section Header Table是一个结构体数组，每个元素的类型是<code>ELF32_shdr</code></p>
 <h3><span id="elf32_shdr">ELF32_shdr</span></h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> &#123;<br>    ELF32_Word      sh_name;<br>    ELF32_Word      sh_type;<br>    ELF32_Word      sh_flags;<br>    ELF32_Addr      sh_addr;<br>    ELF32_Off       sh_offset;<br>    ELF32_Word      sh_size;<br>    ELF32_Word      sh_link;<br>    ELF32_Word      sh_info;<br>    ELF32_Word      sh_addralign;<br>    ELF32_Word      sh_entsize;<br>&#125; Elf32_Shdr;<br></code></pre></td></tr></table></figure>
 
-<p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240523155329324-17164800907777-171648030701915.png" alt="image-20240523155329324" class="lazyload"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240523155329324-17164800907777-171648030701915-171648131108715.png" alt="image-20240523155329324" class="lazyload"></p>
 <p>索引为0的节区头</p>
-<p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240523155905747-17164800887146-171648030857416.png" alt="image-20240523155905747" class="lazyload"></p>
-<h3><span id="特殊下标">特殊下标</span></h3><p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240523162755386-17164800869155-171648031021317.png" alt="image-20240523162755386" class="lazyload"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240523155905747-17164800887146-171648030857416-171648131285916.png" alt="image-20240523155905747" class="lazyload"></p>
+<h3><span id="特殊下标">特殊下标</span></h3><p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240523162755386-17164800869155-171648031021317-171648131474917.png" alt="image-20240523162755386" class="lazyload"></p>
 <p><strong>系统保留在<code>SHN_LORESERVE</code>到<code>SHN_HIRESERVE</code>之间 (包含边界) 的索引值，这些值不在节头表中引用。也就是说，节头表不包含保留索引项。</strong></p>
-<h3><span id="sh_type">sh_type</span></h3><p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240523183951810-17164800842644-171648031194018.png" alt="image-20240523183951810" class="lazyload"></p>
-<p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240523184003588-17164800780371-171648031416219.png" alt="image-20240523184003588" class="lazyload"></p>
+<h3><span id="sh_type">sh_type</span></h3><p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240523183951810-17164800842644-171648031194018-171648131640818.png" alt="image-20240523183951810" class="lazyload"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240523184003588-17164800780371-171648031416219-171648131846719.png" alt="image-20240523184003588" class="lazyload"></p>
 <h3><span id="sh_flags">sh_flags</span></h3><p> <code>sh_flags</code> 字段的每一个比特位都可以给出其相应的标记信息，其定义了对应的节区的内容是否可以被修改、被执行等信息。如果一个标志位被设置，则该位取值为 1，未定义的位都为 0</p>
-<p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240523184039886-17164800798902-171648031618920.png" alt="image-20240523184039886" class="lazyload"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240523184039886-17164800798902-171648031618920-171648131993320.png" alt="image-20240523184039886" class="lazyload"></p>
 <h3><span id="sh_link-sh_info">sh_link ＆ sh_info</span></h3><p>根据<code>sh_type</code>改变</p>
-<p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240523184106055-17164800811443-171648031749221.png" alt="image-20240523184106055" class="lazyload"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/.com//image-20240523184106055-17164800811443-171648031749221-171648132096021.png" alt="image-20240523184106055" class="lazyload"></p>
 
 	</article>
 
