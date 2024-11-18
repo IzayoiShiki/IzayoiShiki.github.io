@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html 
+	lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+<link rel="stylesheet" href="/css/layout.css">
+
+		
+		<title> 反调试技术整理 -  愿意和我学一辈子逆向吗～(∠・ω&lt; )⌒★</title>
+		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
+		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
+		
+<link rel="stylesheet" href="/lib/mdui/mdui.min.css">
+
+		
+<script src="/lib/mdui/mdui.min.js"></script>
+
+		<!-- lazyload -->
+		
+<script src="/lib/lazysizes.js"></script>
+
+		<!-- smooth-scrolling -->
+		
+<script src="/lib/smooth-scrolling.js"></script>
+
+		<!-- highlight -->
+		
+<link rel="stylesheet" href="/lib/highlight/atom-one-dark.min.css">
+
+		
+<script src="/lib/highlight/highlight.min.js"></script>
+
+		<!-- 预置 kiraicon -->
+		
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css">
+
+		
+		<link
+			rel="shortcut icon"
+			href="https://raw.githubusercontent.com/IzayoiShiki/myblog-img/master/head.jpg"
+			type="image/png"
+		/>
+		
+<link rel="stylesheet" href="/deps/css/APlayer.min.css">
+
+		
+		
+<script src="/deps/js/APlayer.min.js"></script>
+<script src="/deps/js/Meting.min.js"></script>
+
+	<meta name="generator" content="Hexo 7.1.1"></head>
+
+	<body>
+		<div
+			class="kira-background"
+			style="background-image: url('https://raw.githubusercontent.com/IzayoiShiki/myblog-img/master/background.jpg')"
+		></div>
+		<div class="kira-header">
+    <a
+        class="kira-drawer-button mdui-ripple"
+        title="导航栏"
+        onclick="document.querySelector('.kira-sidebar-modal').classList.add('show');document.querySelector('.kira-sidebar#sidebar').classList.add('show');"
+    >
+        <i class="kirafont icon-menu"></i>
+    </a>
+    <a href="/" title="愿意和我学一辈子逆向吗～(∠・ω&lt; )⌒★">
+        <img
+			src="https://raw.githubusercontent.com/IzayoiShiki/myblog-img/master/logo.jpg"
+			alt="IzayoiShiki"
+		/>
+    </a>
+</div>
+		<div class="kira-body">
+			<div class="kira-sidebar" id="sidebar">
+	<div class="kira-avatar mdui-ripple">
+		<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/IzayoiShiki/myblog-img/master/logo.jpg" title="IzayoiShiki">
+			<img
+				src="https://raw.githubusercontent.com/IzayoiShiki/myblog-img/master/logo.jpg"
+				alt="IzayoiShiki"
+			/>
+		</a>
+	</div>
+	<div class="kira-count">
+		<div><span>文章</span>2</div>
+		<div><span>标签</span>2</div>
+		<div><span>分类</span>0</div>
+	</div>
+	<div class="kira-list">
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/"
+			title="回到首页"
+		>
+			<i
+				class="kirafont
+					
+						icon-home
+					"
+			></i>
+			<div class="kira-list-item-content">
+				回到首页
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/archive.html"
+			title="文章归档"
+		>
+			<i
+				class="kirafont
+					
+						icon-container
+					"
+			></i>
+			<div class="kira-list-item-content">
+				文章归档
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/about.html"
+			title="关于本人"
+		>
+			<i
+				class="kirafont
+					
+						icon-user
+					"
+			></i>
+			<div class="kira-list-item-content">
+				关于本人
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/friends.html"
+			title="我的朋友"
+		>
+			<i
+				class="kirafont
+					
+						icon-team
+					"
+			></i>
+			<div class="kira-list-item-content">
+				我的朋友
+			</div>
+		</a>
+		
+	</div>
+	<aside id="kira-sidebar">
+		
+			<div class="kira-widget-wrap">
+	<div class="kira-widget kira-social">
+		
+			<a
+				class="mdui-ripple"
+				href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=1563505869&website=www.oicqzone.com"
+				target="_blank"
+				mdui-tooltip="{content: 'QQ'}"
+				style="color: rgb(49, 174, 255); background-color: rgba(49, 174, 255, .1);"
+			>
+				<i
+					class="kirafont
+					
+						icon-QQ
+					"
+				></i>
+			</a>
+		
+	</div>
+</div>
+
+		
+			
+		
+			
+	<div class="kira-widget-wrap">
+		<div id="randomtagcloud" class="kira-widget tagcloud kira-rainbow">
+			<a href="/tags/ELFLearning/" style="font-size: 10px;">ELFLearning</a> <a href="/tags/Reverse/" style="font-size: 10px;">Reverse</a>
+		</div>
+		
+	</div>
+
+
+		
+			
+	<div class="kira-widget-wrap">
+		<h3 class="kira-widget-title">
+			Archive
+		</h3>
+		<div class="kira-widget">
+			<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/">2024</a><span class="archive-list-count">2</span></li></ul>
+		</div>
+	</div>
+
+
+		
+	</aside>
+	<div class="kira-copyright">
+		&copy; 2024
+		<a href="/">IzayoiShiki</a>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &
+		<a href="https://github.com/ch1ny/kira-hexo/" target="_blank">Kira-Hexo</a>
+		<br />
+		
+		
+	</div>
+</div>
+<div
+	class="kira-sidebar-modal"
+	id="sidebar-modal"
+	onclick="(function(self) {
+		self.classList.remove('show');
+		document.querySelector('.kira-sidebar.show#sidebar').classList.remove('show');
+	})(this)"
+></div>
+			<div class="kira-content">
+				<div id="kira-top-header"></div>
+				<div class="kira-main-content">
+					
+<link rel="stylesheet" href="/css/kira-image.css">
+
+
+<script src="/js/kira-image.js"></script>
+
+<div class="kira-image">
+    <div class="kira-image-modal">
+        <div class="kira-image-header">
+            <div class="kira-image-counter"></div>
+            <div class="kira-image-title"></div>
+            <div class="kira-image-operation">
+                <div class="kira-image-operation-button" id="kira-image-operation-button-zoom">
+                    <i class="kirafont icon-zoom-in"></i>
+                </div>
+                <div class="kira-image-operation-button" id="kira-image-operation-button-close">
+                    <i class="kirafont icon-close"></i>
+                </div>
+            </div>
+        </div>
+        <div class="kira-image-container">
+            <div class="kira-image-prev-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-left"></i>
+                </div>
+            </div>
+            <div class="kira-image-list">
+                <div class="kira-image-prev">
+                    <img />
+                </div>
+                <div class="kira-image-now">
+                    <img />
+                </div>
+                <div class="kira-image-next">
+                    <img />
+                </div>
+            </div>
+            <div class="kira-image-next-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+	
+<link rel="stylesheet" href="/css/kira-code-copy.css">
+
+	
+<script src="/js/kira-code-copy.js"></script>
+
+
+<div class="kira-post">
+	<article>
+		
+		<div class="kira-post-cover">
+			<img
+				data-src="https://raw.githubusercontent.com/IzayoiShiki/myblog-img/master/head.jpg"
+				data-sizes="auto"
+				alt="反调试技术整理"
+				class="lazyload kira-post-cover-image disabled-kira-image"
+			/>
+			<h1>反调试技术整理</h1>
+		</div>
+		
+		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
+			<a><i class="kirafont icon-calendar-fill"></i>2024年11月18日</a>
+			<a><i class="kirafont icon-edit-fill"></i>2k 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 8 分钟</a>
+		</div>
+		<h1><span id="反调试技术整理">反调试技术整理</span></h1><p><a target="_blank" rel="noopener" href="https://anti-debug.checkpoint.com/techniques/exceptions.html">Anti-Debug: Exceptions (checkpoint.com)</a></p>
+<h2><span id="isdebuggerpresent">IsDebuggerPresent()</span></h2><p>检查<code>peb</code>中的<code>BeingDebugged</code>参数，当返回值为1时表明正在被调试</p>
+<p>检查段寄存器中的<code>fs:[0x30] (32位)</code> 和 <code>GS:[0x60] (64位)</code>也是一样的效果</p>
+<p><a target="_blank" rel="noopener" href="https://ctf-wiki.org/reverse/platform/windows/anti-debug/isdebuggerpresent/">IsDebuggerPresent - CTF Wiki (ctf-wiki.org)</a></p>
+<h2><span id="checkremotedebuggerpresent">CheckRemoteDebuggerPresent()</span></h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">BOOL WINAPI CheckRemoteDebuggerPresent(<br>  _In_    HANDLE hProcess,<br>  _Inout_ PBOOL  pbDebuggerPresent<br>);<br></code></pre></td></tr></table></figure>
+
+<p>如果调试器存在，<code>pbDebuggerPresent</code>的值会被设置为<code>0xffffffff</code></p>
+<p><code>CheckRemoteDebuggerPresent</code>通过调用<code>NtQueryInformationProcess</code>来实现对调试器的检测，当参数设置为7时，<code>NtQueryInformationProcess</code>会返回远程调试器的端口</p>
+<p><a target="_blank" rel="noopener" href="https://ctf-wiki.org/reverse/platform/windows/anti-debug/checkremotedebuggerpresent/">CheckRemoteDebuggerPresent - CTF Wiki (ctf-wiki.org)</a></p>
+<h2><span id="outputdebugstring">OutputDebugString</span></h2><p>在有调试器存在和没有调试器存在时，OutputDebugString函数表现会有所不同。最明显的不同是， 如果有调试器存在，<br>其后的GetLastError()的返回值为零</p>
+<h2><span id="异常捕获与处理">异常捕获与处理</span></h2><p>程序通过引发或捕获异常，将异常丢给调试器进行处理，从而完成反调试，在没有调试器的时候程序自身需要拥有处理异常的能力</p>
+<h3><span id="windows异常">Windows异常</span></h3><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/669630304">Windows异常处理机制 - 知乎 (zhihu.com)</a></p>
+<h4><span id="veh和seh">VEH和SEH</span></h4><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_38474570/article/details/104346421">VEH和SEH_seh veh-CSDN博客</a></p>
+<h5><span id="veh">VEH</span></h5><p>1.CPU捕获异常<br>2.通过<code>KiDispatchException</code>进行分发(3环异常将EIP修改为KiUserExceptionDispatcher)<br>3.<code>KiUserExceptionDispatcher</code>调用RtlDispatchException<br>4.<code>RtlDispatchException</code>查找<code>VEH</code>处理函数链表，并调用相关处理函数<br>5.代码返回到<code>ZwContinue</code>再次进入0环<br>6.线程再次返回3环后，从修正的位置开始执行</p>
+<h5><span id="seh">SEH</span></h5><p>1.FS:[0]指向SEH链表的第一个成员</p>
+<p>2.SEH的异常处理函数必须在当前线程的堆栈中</p>
+<p>3.只有当VEH中的异常处理函数不存在或者不处理才会到SEH链表中查找</p>
+<h4><span id="异常捕获">异常捕获</span></h4><h5><span id="硬件异常">硬件异常</span></h5><p>1.检测到异常</p>
+<p>2.查找IDT表，执行中断处理函数<code>_KiTrap00</code></p>
+<p><code>_KiTrap00函数</code>：1）保存现场，将寄存器堆栈信息等保存到<code>_trap_frame</code>中</p>
+<p>2）调用<code>CommonDispatchException</code>函数(分析参数EAX,EBX中的值) </p>
+<p>3.<code>CommonDispatchException</code>函数：该函数构造一个<code>_EXCEPTION_RECORD</code>结构体并赋值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">type struct_EXCEPTION_RECORD<br>&#123;<br>    DWORD ExceptionCode;    //异常代码<br>    DWORD ExceptionFlags;   //异常状态<br>    struct_EXCEPTION_RECORD* ExceptionRecord;   //下一个异常<br>    PVOID ExceptionAddress; //异常发生地址<br>    DWORD NumberParameters; //附加参数指针<br>    ULONG_PTR ExceptionInformation<br>    [EXCEPTION_MAXIMUM_PARAMETERS]; //附加参数个数<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>4.调用<code>KiDispatchException</code></p>
+<h5><span id="软件异常">软件异常</span></h5><p>1.检测到<code>throw</code>关键字</p>
+<p>2.转入<code>CxxThrowException</code></p>
+<p>3.调用<code>KERNEL32.DLL RaiseException</code>，填充<code>_EXCEPTION_RECORD</code>结构体</p>
+<p>4.转入<code>NTDLL.DLL RtIRaiseException()</code></p>
+<p>5.转入<code>NT NtRaiseException</code></p>
+<p>6.转入<code>NT KiRaiseException</code>，<code>ExceptionCode</code>最高位清零</p>
+<p>7.调用<code>KiDispatchException</code></p>
+<h4><span id="异常处理">异常处理</span></h4><h5><span id="内核异常">内核异常</span></h5><p>1.尝试传递给内核调试器</p>
+<p>2.失败，调用<code>RtIDispatchException</code>传递给<code>SEH</code></p>
+<p><code>RtIDispatchException</code>函数：遍历异常链表，调用异常处理函数，如果成功处理返回1，失败则调用下一个，直到最后也没成功处理即返回0</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="https://raw.githubusercontent.com/IzayoiShiki/myblog-img/master/image-20241118223532698.png" alt="image-20241118223532698" class="lazyload"></p>
+<p>3.传递给内核调试器</p>
+<p>4.终止Windows运行（BSOD）</p>
+<h5><span id="用户异常">用户异常</span></h5><p>1.尝试传递给内核调试器</p>
+<p>2.失败，则传入<code>KiUserExceptionDispatcher</code></p>
+<p>3.调用<code>RtIDispatchException</code>查找并执行异常处理函数 </p>
+<p>4.由VEH链表查找至SEH链表</p>
+<p>5.如果未处理，则传递给内核调试器</p>
+<p>6.失败，终止进程</p>
+<h4><span id="try与__try">try与__try</span></h4><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/xiaoxiaoyu85/article/details/42778779">C++ 异常捕获 try 和 __try的区别-CSDN博客</a></p>
+<h3><span id="closehandle">CloseHandle()</span></h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Simon798/article/details/107143375">反调试 - CloseHanlde，NtClose_closehandle 检测异常-CSDN博客</a></p>
+<p>调用<code>CloseHandle</code>释放一个无效句柄，这个异常会被一个异常处理程序缓存，即被调试器缓存，如果没有被调试，那么函数返回FALSE，<code>GetLastError = ERROR_INVALID_HANDLE：0xC0000008</code>；但如果被调试，那么系统将抛出异常 <code>C0000008H</code></p>
+<h3><span id="断点植入int-2dh-int-3h">断点植入（int 2dh, int 3h）</span></h3><p>提前植入一个断点，再植入VEH异常处理例程，如果正在被调试的话会抛出中断异常</p>
+<p>2d断点会跳过下一个字节</p>
+<p><a target="_blank" rel="noopener" href="https://ctf-wiki.org/reverse/platform/windows/anti-debug/int-3/">Interrupt 3 - CTF Wiki (ctf-wiki.org)</a></p>
+<h3><span id="page-guard">Page-Guard</span></h3><p>分配被保护的内存区，用<code>PAGE_GUARD</code>属性修饰，填入ret指令，如果程序尝试访问保护页中的地址，系统会引发 <code>STATUS_GUARD_PAGE_VIOLATION (0x80000001)</code> 异常</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/win32/memory/creating-guard-pages">创建 Guard 页面 - Win32 apps | Microsoft Learn</a></p>
+<h3><span id="引发exception_execute_handler错误">引发EXCEPTION_EXECUTE_HANDLER错误</span></h3><h3><span id="eflags">EFLAGS</span></h3><p>使用EFLAGS写入异常标志，然后监视异常</p>
+<p>将EFLAGS与0X100进行或运算，利用VEH检测调试器</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/Reverse-xiaoyu/p/11397584.html">EFLAGS寄存器（标志寄存器） - Reverse-xiaoyu - 博客园 (cnblogs.com)</a></p>
+<h3><span id="unhandledexceptionfilter">UnhandledExceptionFilter()</span></h3><p>引发并不处理异常，诱导调试器去处理</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Simon798/article/details/107298726">反调试 - SetUnhandledExceptionFilter-CSDN博客</a></p>
+<h2><span id="内存扫描与监视">内存扫描与监视</span></h2><h3><span id="硬件断点寄存器监视">硬件断点寄存器监视</span></h3><p>利用<code>GetThreadContext</code>获取上下文，检查硬件断点寄存器的值是否为0</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/620612511">软断点、硬件断点和内存断点(逆向基础知识) - 知乎 (zhihu.com)</a></p>
+<h3><span id="mem_write_watch">MEM_WRITE_WATCH</span></h3><p>利用<code>MEM_WRITE_WATCH</code>检查申请的内存块中的写入，访问情况</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/win32/api/memoryapi/nf-memoryapi-virtualalloc">VirtualAlloc 函数 (memoryapi.h) - Win32 apps | Microsoft Learn</a></p>
+<h2><span id="lfh低碎片堆">LFH低碎片堆</span></h2><p>堆碎片是一种状态，其中可用内存被分解为较小的非连续块。 当堆被碎片化时，即使堆中的可用内存总量足以满足请求，内存分配也可能会失败，因为没有一个内存块足够大。 低碎片堆 (LFH) 有助于减少堆碎片</p>
+<p>调试工具无法启用LFH，会导致空间开辟错误，因此可以判断是否正在调试</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/win32/memory/low-fragmentation-heap">低碎片堆 - Win32 apps | Microsoft Learn</a></p>
+<h2><span id="反hook">反HOOK</span></h2><p>通过对比DLL中函数的地址判断是否被hook</p>
+<h2><span id="ntglobalflag">NtGlobalFlag</span></h2><p>在 32 位机器上, <code>NtGlobalFlag</code>字段位于<code>PEB</code>(进程环境块)<code>0x68</code>的偏移处, 64 位机器则是在偏移<code>0xBC</code>位置. 该字段的默认值为 0. 当调试器正在运行时, 该字段会被设置为一个特定的值. 尽管该值并不能十分可信地表明某个调试器真的有在运行</p>
+<p>有调试器时会有以下标志位</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-built_in">FLG_HEAP_ENABLE_TAIL_CHECK</span> (<span class="hljs-number">0x10</span>)<br><span class="hljs-built_in">FLG_HEAP_ENABLE_FREE_CHECK</span> (<span class="hljs-number">0x20</span>)<br><span class="hljs-built_in">FLG_HEAP_VALIDATE_PARAMETERS</span> (<span class="hljs-number">0x40</span>)<br></code></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://ctf-wiki.org/reverse/platform/windows/anti-debug/ntglobalflag/">NtGlobalFlag - CTF Wiki (ctf-wiki.org)</a></p>
+<h2><span id="ntqueryinformationprocess">NtQueryInformationProcess</span></h2><p>将<code>ProcessInformationClass</code>设置为7，可以检查调试器</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/win32/api/winternl/nf-winternl-ntqueryinformationprocess">NtQueryInformationProcess 函数 (winternl.h) - Win32 apps | Microsoft Learn</a></p>
+<h2><span id="ntquerysysteminformation">NtQuerySystemInformation</span></h2><p>当第一个参数传入 0x23 （SystemInterruptInformation） 时，会返回一个 <code>SYSTEM_KERNEL_DEBUGGER_INFORMATION</code> 结构，里面的成员<code>KdKdDebuggerEnable</code>和 <code>KdDebuggerNotPresent</code> 标志系统是否启用内核调试</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Simon798/article/details/107344650">反调试 - r3 使用 NtQuerySystemInformation 获取 KdKdDebuggerEnable 和 KdDebuggerNotPresent_r3 hook ntquerysysteminformation-CSDN博客</a></p>
+<h2><span id="查询调试对象">查询调试对象</span></h2><p>利用NtQueryObject检查所有调试对象，从而禁止调试</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41988448/article/details/118307402">Windows软件调试学习笔记（一）—— 调试对象_createdebugobject-CSDN博客</a></p>
+<h2><span id="zwsetinformationthread">ZwSetInformationThread</span></h2><p>将第二个参数设为0x11，可以将进程隐藏</p>
+<p><a target="_blank" rel="noopener" href="https://ctf-wiki.org/reverse/platform/windows/anti-debug/zwsetinformationthread/">ZwSetInformationThread - CTF Wiki (ctf-wiki.org)</a></p>
+<h2><span id="ntyeildexecution">NtYeildExecution</span></h2><p>这个函数可以让任何就绪的线程暂停执行，等待下一个线程调度。<br>当前线程放弃剩余时间，让给其他线程执行。如果没有其他准备好的线程，该函数返回false，否则返回true。<br>当前线程如果被调试，那么调试器线程若处于单步状态，随时等待继续运行，则被调试线程执行NtYieldExecution时，调试器线程会恢复执行。<br>此时NtYieldExecution返回true，该线程则认为自身被调试了</p>
+<h2><span id="父进程检查">父进程检查</span></h2><p>如果启动进程不是cmd.exe或explorer.exe，则返回警告</p>
+<h2><span id="heap-flags">Heap Flags</span></h2><p><a target="_blank" rel="noopener" href="https://ctf-wiki.org/reverse/platform/windows/anti-debug/heap-flags/">Heap Flags - CTF Wiki (ctf-wiki.org)</a></p>
+<h3><span id="heapflag">HeapFlag</span></h3><p>大于2说明正在被调试</p>
+<h3><span id="heapforceflag">HeapForceFlag</span></h3><p>大于0说明正在被调试</p>
+<h2><span id="job-object">Job Object</span></h2><p>为了共享权限，调试器和被调试进程会放在同一job object中，通过检查进程同一object中的所有进程，可以枚举出调试器</p>
+<h2><span id="sedebugprivileges">SeDebugPrivileges</span></h2><p>一般进程是默认禁用SeDebugPrivilege权限的，但是调试器会开启此权限，通过调试器开启的进程也会获得该权限，通过检查进程是否启用SeDebugPrivilege权限可以间接检测调试器</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/win32/secauthz/enabling-and-disabling-privileges-in-c--">在 C++ 中启用和禁用特权 - Win32 apps | Microsoft Learn</a></p>
+<h2><span id="kuser_shard_data">KUSER_SHARD_DATA</span></h2><p>用户空间和内核空间有一块共享空间<code>KUSER_SHARD_DATA</code>，可以通过检查其中的内核调试检查位<code>KdDebuggerEnabled</code>来获取内核调试状态</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-CN/windows-hardware/drivers/ddi/ntddk/ns-ntddk-kuser_shared_data">KUSER_SHARED_DATA (ntddk.h) - Windows drivers | Microsoft Learn</a></p>
+<h2><span id="0xcc">0xCC</span></h2><p>Debug版本下未被初始化的区域会被设置为0xCC，字符为“烫”，通过检查关键区域的字节码，确认其中是否有0xCC，可以检测到是否处于调试状态</p>
+<h2><span id="tls_callback">TLS_Callback</span></h2><p>TLS在main函数之前执行</p>
+<p>[<a target="_blank" rel="noopener" href="https://bbs.kanxue.com/thread-267175.htm">原创]TLS回调函数(Note)-软件逆向-看雪-安全社区|安全招聘|kanxue.com</a></p>
+<h2><span id="wudf">WUDF</span></h2><p><code>WUDFPlatfrom.dll</code>中有一个函数类似于<code>IsDebuggerPresent</code>，可以用于检测调试器</p>
+
+	</article>
+
+	 
+    <div class="kira-post-copyright">
+        <strong>Author：</strong>IzayoiShiki<br>
+        <strong>Link：</strong><a href="http://izayoishiki.github.io/2024/11/18/%E5%8F%8D%E8%B0%83%E8%AF%95%E6%8A%80%E6%9C%AF%E6%95%B4%E7%90%86/" title="http:&#x2F;&#x2F;izayoishiki.github.io&#x2F;2024&#x2F;11&#x2F;18&#x2F;反调试技术整理&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;izayoishiki.github.io&#x2F;2024&#x2F;11&#x2F;18&#x2F;反调试技术整理&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+  
+	<div class="kira-post-nav">
+		<nav class="post-nav">
+			
+		</nav>
+	</div>
+	
+	<div class="kira-post-meta kira-rainbow">
+		
+		
+			<a class="kirafont icon-tag-fill -none-link" href="/tags/Reverse/" rel="tag">Reverse</a>
+		
+	</div>
+	
+	<div class="kira-post-footer">
+		
+
+		
+	</div>
+	
+</div>
+
+				</div>
+			</div>
+			<div class="kira-right-column">
+	<a onclick="document.querySelector('#kira-top-header').scrollIntoView({behavior: 'smooth'});" class="kira-backtotop" aria-label="回到顶部" title="回到顶部">
+		<button class="mdui-fab mdui-ripple">
+			<i class="kirafont icon-caret-up"></i>
+		</button>
+	</a>
+</div>
+
+		</div>
+	</body>
+</html>
